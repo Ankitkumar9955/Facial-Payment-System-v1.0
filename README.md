@@ -1,143 +1,191 @@
-# Face Pay – Facial Recognition Based UPI Payment Prototype
+# Face Pay - Facial Recognition Payment System
 
-A seamless and secure **payment system prototype** using **facial recognition and UPI PIN simulation**. Face Pay enables quick identity verification at merchant counters, where the user’s face becomes their authentication method — followed by a secure PIN entry step.
+A Python-based prototype of a secure facial recognition payment system that simulates a complete payment flow using face authentication and PIN verification.
 
----
+## 🚀 Features
 
-## Project Overview
+- **Face Recognition**: Real-time face detection and recognition using OpenCV and face_recognition libraries
+- **PIN Verification**: Secure 4-6 digit PIN validation with SHA-256 hashing
+- **Modern GUI**: Beautiful Tkinter-based interface with intuitive user experience
+- **User Management**: Easy registration and management of users
+- **Security**: Face encodings and PINs stored securely in local files
+- **Simulation**: Complete payment flow simulation without real UPI integration
 
-**Face Pay** simulates a payment flow tailored for **merchant shops**, allowing the seller to enter the amount first. The system then uses **real-time facial recognition** to verify the customer’s identity and proceeds with a **PIN-based confirmation** to simulate a complete payment experience.
+## 📁 Project Structure
 
-This prototype is designed for demonstration, educational purposes, and future integration with real-time payment systems like **UPI**.
+```
+face_pay/
+├── main.py                 # Main application entry point
+├── face_recognition_module.py  # Face detection and recognition
+├── pin_verification.py     # PIN validation and security
+├── gui.py                  # Tkinter GUI interface
+├── register_user.py        # Standalone user registration script
+├── requirements.txt        # Python dependencies
+├── README.md              # This file
+└── data/                  # Data storage directory
+    ├── faces.pkl          # Face encodings (auto-generated)
+    └── pin_data.json      # PIN data (auto-generated)
+```
 
----
+## 🛠️ Installation
 
-## ✨ Features
+### Prerequisites
 
-* 🧾 **Amount Entry Interface**: Merchant inputs the amount before scanning begins
-* 🎥 **Face Recognition with OpenCV**: Real-time face detection and identification using webcam
-* 🔐 **UPI PIN Verification**: Secure PIN entry simulation post face match
-* 🖥️ **Interactive GUI**: Clean and intuitive Tkinter interface for all steps
-* 💾 **Local Face & PIN Storage**: Data stored securely using `pickle` and JSON
-* 📊 **User Feedback**: Real-time messages for transaction success or failure
+- Python 3.7 or higher
+- Webcam for face recognition
+- Windows/Linux/macOS
 
----
+### Setup
 
-## 🛠️ Tech Stack & Requirements
+1. **Clone or download the project**
+   ```bash
+   cd face_pay
+   ```
 
-> **Language**: Python 3.8+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-**Libraries Used:**
+3. **Run the application**
+   ```bash
+   python main.py
+   ```
 
-* `opencv-python`
-* `face_recognition`
-* `pickle`
-* `json`
-* `tkinter`
-* `os`
-* `numpy`
+## 🎯 Usage
 
----
+### Main Application
 
-## 🔧 Installation
+1. **Start the application**
+   ```bash
+   python main.py
+   ```
+
+2. **Register a new user** (if needed)
+   - Click "Register User" button
+   - Enter your name
+   - Look at the camera and press 'R' to capture your face
+   - Enter a 4-6 digit PIN
+
+3. **Make a payment**
+   - Click "Start Face Scan"
+   - Look at the camera for recognition
+   - Press 'C' to confirm when recognized
+   - Enter your PIN
+   - Click "Verify & Pay"
+
+### User Registration Script
+
+For advanced user management, use the standalone registration script:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/face-pay-prototype.git
-cd face-pay-prototype
+python register_user.py
+```
 
-# 2. Create a virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+This provides options to:
+- Register new users
+- List all registered users
+- Remove users
+- Change PINs
 
-# 3. Install dependencies
+## 🔧 Technical Details
+
+### Face Recognition
+- Uses OpenCV for camera capture
+- face_recognition library for face detection and encoding
+- Stores face encodings in `data/faces.pkl`
+- Supports real-time recognition with confidence scoring
+
+### PIN Security
+- SHA-256 hashing with salt
+- 4-6 digit PIN validation
+- Stored securely in `data/pin_data.json`
+- No plain text storage
+
+### GUI Features
+- Modern dark theme
+- Real-time status updates
+- Thread-safe face recognition
+- Intuitive button layout
+- Success/error feedback
+
+## 🎨 Screenshots
+
+The application features:
+- Clean, modern interface
+- Real-time face recognition window
+- PIN entry with masked input
+- Success/error message display
+- User-friendly registration process
+
+## 🔒 Security Features
+
+- **Face Encoding**: Biometric data stored as numerical encodings
+- **PIN Hashing**: Passwords hashed with SHA-256 and salt
+- **Local Storage**: All data stored locally on your machine
+- **No Network**: No external API calls or data transmission
+
+## 🚨 Important Notes
+
+- This is a **prototype/simulation** only
+- No real payment processing
+- No actual UPI integration
+- Face data and PINs stored locally
+- Requires webcam for functionality
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Camera not working**
+   - Ensure webcam is connected and not in use by other applications
+   - Check camera permissions
+
+2. **Face recognition not working**
+   - Ensure good lighting
+   - Face should be clearly visible
+   - Try registering face again
+
+3. **Dependencies issues**
+   - Update pip: `pip install --upgrade pip`
+   - Install Visual C++ build tools (Windows)
+   - Use conda for easier installation
+
+### Installation Troubleshooting
+
+**Windows:**
+```bash
+pip install cmake
+pip install dlib
 pip install -r requirements.txt
 ```
 
----
-
-## Usage
-
+**Linux/macOS:**
 ```bash
-python main.py
+sudo apt-get install cmake  # Ubuntu/Debian
+brew install cmake          # macOS
+pip install -r requirements.txt
 ```
 
-### Workflow:
+## 🤝 Contributing
 
-1. 👨‍💼 Merchant enters the **amount to be paid**
-2. 🧠 Face recognition starts automatically via webcam
-3. ✅ If face is recognized, user enters their **UPI PIN**
-4. 💰 Transaction is **simulated** with a success/failure message
+This is a prototype project. Feel free to:
+- Report bugs
+- Suggest improvements
+- Add new features
+- Improve documentation
 
----
+## 📄 License
 
-## 📁 File Structure
+This project is for educational and demonstration purposes.
 
-```
-face-pay-prototype/
-├── data/
-│   ├── faces.pkl             # Stored face encodings
-│   └── pin_data.json         # User PINs linked to names
-├── face_recognition_module.py   # Face registration & recognition logic
-├── pin_verification.py          # PIN validation functions
-├── gui.py                       # GUI interfaces for amount, face, and PIN
-├── register_user.py             # Optional script to register new users
-├── main.py                      # Main program flow
-├── requirements.txt
-└── README.md
-```
+## 🙏 Acknowledgments
+
+- OpenCV for computer vision capabilities
+- face_recognition library for face detection
+- Tkinter for GUI framework
+- Python community for excellent libraries
 
 ---
 
-## Screenshots
-
-| 🧾 Amount Entry                                                                                  | 🧠 Face Recognition                                                                                  | 🔐 PIN Verification                                                                           | ✅ Transaction Result                                                                                   |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| ![Amount Entry](https://github.com/user-attachments/assets/897850af-817f-4f6a-a565-825721ab2dd5) | ![Face Recognition](https://github.com/user-attachments/assets/8dd5aa7c-33e8-4a7c-977d-bf45f023370f) | ![PIN Entry](https://github.com/user-attachments/assets/16733d21-8cae-40be-a061-64e069d13101) | ![Transaction Result](https://github.com/user-attachments/assets/7cbbb524-fc0a-424e-82a5-70dba756780f) |
-
-> 💡 *Tip: If screenshots are broken, make sure the GitHub image URLs are publicly accessible or hosted in your repo's `assets` folder.*
-
----
-
-## ⚠️ Limitations
-
-* 🔒 Real UPI or payment API is **not integrated** (simulation only)
-* 🧍 Face recognition accuracy depends on camera quality and lighting
-* 🗃️ Data is stored locally — no cloud/database support
-
----
-
-##  Future Enhancements
-* 🔗 Integrate with **actual UPI API** (e.g., PhonePe for Business)
-* 🌐 Web-based version using Flask or Streamlit
-* 🧠 Add **liveness detection** to prevent spoofing
-* 🧾 Generate digital receipts with QR code
-* 🧠 Use ML models for fraud detection
-
----
-
-##  Contributing
-
-We welcome your contributions!
-To contribute:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-name`)
-3. Make your changes
-4. Commit and push
-5. Create a Pull Request 🚀
-
----
-
-## 🧾 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 📌 Disclaimer
-
-> **Face Pay** is a **proof-of-concept prototype** and does not perform real financial transactions.
-> It is meant for **educational and demonstration** purposes only.
-
-
+**Note**: This system is designed for educational purposes and demonstrates the concept of facial recognition payment systems. It does not implement actual payment processing or real-world security measures. 
