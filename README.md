@@ -1,15 +1,10 @@
-# Facial-Payment-System-v1.0
-Here’s a fully detailed and styled **README.md** for your **Face Pay** project — modeled on the stock market README format you shared:
-
----
-
-# 👤💸 Face Pay – Facial Recognition Based UPI Payment Prototype
+# Face Pay – Facial Recognition Based UPI Payment Prototype
 
 A seamless and secure **payment system prototype** using **facial recognition and UPI PIN simulation**. Face Pay enables quick identity verification at merchant counters, where the user’s face becomes their authentication method — followed by a secure PIN entry step.
 
 ---
 
-##  Project Overview
+## Project Overview
 
 **Face Pay** simulates a payment flow tailored for **merchant shops**, allowing the seller to enter the amount first. The system then uses **real-time facial recognition** to verify the customer’s identity and proceeds with a **PIN-based confirmation** to simulate a complete payment experience.
 
@@ -17,7 +12,7 @@ This prototype is designed for demonstration, educational purposes, and future i
 
 ---
 
-##  Features
+## ✨ Features
 
 * 🧾 **Amount Entry Interface**: Merchant inputs the amount before scanning begins
 * 🎥 **Face Recognition with OpenCV**: Real-time face detection and identification using webcam
@@ -28,7 +23,7 @@ This prototype is designed for demonstration, educational purposes, and future i
 
 ---
 
-##  Tech Stack & Requirements
+## 🛠️ Tech Stack & Requirements
 
 > **Language**: Python 3.8+
 
@@ -44,7 +39,7 @@ This prototype is designed for demonstration, educational purposes, and future i
 
 ---
 
-##  Installation
+## 🔧 Installation
 
 ```bash
 # 1. Clone the repository
@@ -61,7 +56,7 @@ pip install -r requirements.txt
 
 ---
 
-##  Usage
+## Usage
 
 ```bash
 python main.py
@@ -76,7 +71,7 @@ python main.py
 
 ---
 
-## File Structure
+## 📁 File Structure
 
 ```
 face-pay-prototype/
@@ -94,30 +89,25 @@ face-pay-prototype/
 
 ---
 
-##Screenshots
+## Screenshots
 
-| 🧾 Amount Entry Screen                         | 🧠 Face Recognition                          | 🔐 PIN Verification                         | ✅ Transaction Result                           |
-| ---------------------------------------------- | -------------------------------------------- | ------------------------------------------- | ---------------------------------------------- |
-| ![Amount](![Screenshot 2025-06-29 004953](https://github.com/user-attachments/assets/897850af-817f-4f6a-a565-825721ab2dd5)
-) | ![Face](![Screenshot 2025-06-29 005044](https://github.com/user-attachments/assets/8dd5aa7c-33e8-4a7c-977d-bf45f023370f)
-) | ![PIN](![Screenshot 2025-06-29 005232](https://github.com/user-attachments/assets/16733d21-8cae-40be-a061-64e069d13101)
-![Screenshot 2025-06-29 005257](https://github.com/user-attachments/assets/c39d0094-93d7-408d-aafd-6c8913391fce)
+| 🧾 Amount Entry                                                                                  | 🧠 Face Recognition                                                                                  | 🔐 PIN Verification                                                                           | ✅ Transaction Result                                                                                   |
+| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| ![Amount Entry](https://github.com/user-attachments/assets/897850af-817f-4f6a-a565-825721ab2dd5) | ![Face Recognition](https://github.com/user-attachments/assets/8dd5aa7c-33e8-4a7c-977d-bf45f023370f) | ![PIN Entry](https://github.com/user-attachments/assets/16733d21-8cae-40be-a061-64e069d13101) | ![Transaction Result](https://github.com/user-attachments/assets/7cbbb524-fc0a-424e-82a5-70dba756780f) |
 
-) | ![Result](![Screenshot 2025-06-29 005305](https://github.com/user-attachments/assets/7cbbb524-fc0a-424e-82a5-70dba756780f)
-) |
+> 💡 *Tip: If screenshots are broken, make sure the GitHub image URLs are publicly accessible or hosted in your repo's `assets` folder.*
 
 ---
 
-##  Limitations
+## ⚠️ Limitations
 
 * 🔒 Real UPI or payment API is **not integrated** (simulation only)
-* 🧍 Face recognition accuracy depends on camera quality and environment
+* 🧍 Face recognition accuracy depends on camera quality and lighting
 * 🗃️ Data is stored locally — no cloud/database support
 
 ---
 
-## Future Enhancements
-
+##  Future Enhancements
 * 🔗 Integrate with **actual UPI API** (e.g., PhonePe for Business)
 * 🌐 Web-based version using Flask or Streamlit
 * 🧠 Add **liveness detection** to prevent spoofing
@@ -126,7 +116,7 @@ face-pay-prototype/
 
 ---
 
-## Contributing
+##  Contributing
 
 We welcome your contributions!
 To contribute:
@@ -143,14 +133,11 @@ To contribute:
 
 This project is licensed under the **MIT License**.
 
-
 ---
 
-## Disclaimer
+## 📌 Disclaimer
 
 > **Face Pay** is a **proof-of-concept prototype** and does not perform real financial transactions.
 > It is meant for **educational and demonstration** purposes only.
 
----
 
-Let me know if you'd like me to export this as a `README.md` file or add demo GIFs!
